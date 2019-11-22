@@ -5,17 +5,16 @@ var connection = mysql.createConnection({
   password: '',
   database: 'health_app',
 });
-
+// connection.connect();
 const getAllData = () => {
-  // connection.connect();
-  const res = connection.query('SELECT * from health_data order by date desc', function(err, rows, fields) {
+  const query = 'SELECT * FROM health_data ORDER BY date DESC';
+  const res = connection.query(query, (err, rows, fields) => {
     if (err) throw err;
-    
+    console.log('The solution is: change', res);
     // connection.end();
     return rows;
-    
   });
-  console.log('The solution is: ', res);
+  console.log('The solution is: change', res);
   return res;
 }
 
