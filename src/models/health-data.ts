@@ -7,6 +7,7 @@ const getData = (res: Response) => {
       if (err) {
         throw err;
       }
+      console.log('this is rows', rows);
       res.send({rows});
     },
   );
